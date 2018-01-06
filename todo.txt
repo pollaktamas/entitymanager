@@ -1,0 +1,1 @@
+Mi történik egy tranzakció során? Az EM megnézni, van-e már hozzá kapcsolt PC, ha van azt használja... (PROPAGATION)
