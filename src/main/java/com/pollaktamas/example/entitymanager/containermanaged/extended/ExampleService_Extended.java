@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.SynchronizationType;
 import javax.transaction.Transactional;
 
 import static javax.persistence.PersistenceContextType.EXTENDED;
@@ -22,7 +21,7 @@ public class ExampleService_Extended {
         entityManager.persist(employee);
     }
 
-    @Transactional(NOT_SUPPORTED)
+    @Transactional(NEVER)
     public Employee findOutSideOfTransaction(long primaryKey) {
         return entityManager.find(Employee.class, primaryKey);
     }
@@ -32,7 +31,7 @@ public class ExampleService_Extended {
         return entityManager.find(Employee.class, primaryKey);
     }
 
-    @Transactional(NOT_SUPPORTED)
+    @Transactional(NEVER)
     public void modifyOutsideOfTransaction(Employee employee, String name) {
         employee.setName(name);
     }

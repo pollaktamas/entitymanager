@@ -1,10 +1,7 @@
 package com.pollaktamas.example.entitymanager.propagation;
 
-import com.pollaktamas.example.entitymanager.containermanaged.extended.ExampleService_Extended;
 import com.pollaktamas.example.entitymanager.containermanaged.propagation.PropagationService1;
 import com.pollaktamas.example.entitymanager.containermanaged.propagation.PropagationService2;
-import com.pollaktamas.example.entitymanager.model.Employee;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +9,7 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

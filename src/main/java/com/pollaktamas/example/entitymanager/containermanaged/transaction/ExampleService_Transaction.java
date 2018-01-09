@@ -33,7 +33,7 @@ public class ExampleService_Transaction {
         Assert.isTrue(employee1 == employee2);
     }
 
-    @Transactional(NOT_SUPPORTED)
+    @Transactional(NEVER)
     public Employee findOutSideOfTransaction(long primaryKey) {
         return entityManager.find(Employee.class, primaryKey);
     }
