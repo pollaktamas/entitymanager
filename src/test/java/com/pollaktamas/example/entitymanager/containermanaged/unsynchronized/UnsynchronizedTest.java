@@ -1,11 +1,11 @@
-package com.pollaktamas.example.entitymanager.unsynchronized;
+package com.pollaktamas.example.entitymanager.containermanaged.unsynchronized;
 
-import com.pollaktamas.example.entitymanager.containermanaged.unsynchronized.ExampleService_Unsynchronized;
 import com.pollaktamas.example.entitymanager.model.Employee;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManagerFactory;
@@ -13,9 +13,11 @@ import javax.persistence.PersistenceUnit;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.springframework.test.annotation.DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@DirtiesContext(classMode = AFTER_EACH_TEST_METHOD)
 public class UnsynchronizedTest {
 
     @Autowired
