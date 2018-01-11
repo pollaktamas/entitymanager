@@ -1,0 +1,4 @@
+logging:
+  level:
+    com.pollaktamas: trace
+    org.springframework.orm.jpa: trace
