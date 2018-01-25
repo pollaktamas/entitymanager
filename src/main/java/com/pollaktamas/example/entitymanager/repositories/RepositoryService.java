@@ -15,6 +15,10 @@ public class RepositoryService {
     @Autowired EmployeeRepository employeeRepository;
     @Autowired CompanyRepository companyRepository;
 
+    /**
+     * Mindkét repository ugyanazt az EntityManager-t használja. Azt, ami a tranzakció létrejötte után jött létre, és
+     * ahhoz van kötve.
+     */
     @Transactional(REQUIRED)
     public void method() {
         Employee employee = new Employee();
