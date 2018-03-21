@@ -7,7 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.assertTrue;
 import static org.springframework.test.annotation.DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD;
 
 @RunWith(SpringRunner.class)
@@ -22,12 +21,11 @@ public class PropagationTest {
     PropagationService2 propagationService2;
 
     /**
-     * A PropagationService1 és PropagationService2 osztályok más EntityManager példányokkal rendelkeznek, de mivel
+     * A PropagationService1 és PropagationService2 osztályok más EntityManager példányokat hívhatnak, de mivel
      * egy tranzakcióban vesznek részt, így propagálódik a PC és ugyanazon entitáshalmazon dolgoznak.
      */
     @Test
     public void testPropagation() {
-        assertTrue(propagationService1.getEntityManager() != propagationService2.getEntityManager());
         propagationService1.method();
     }
 }

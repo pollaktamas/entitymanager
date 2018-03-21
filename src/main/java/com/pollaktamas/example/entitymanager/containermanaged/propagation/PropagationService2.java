@@ -20,8 +20,4 @@ public class PropagationService2 {
     public Employee findEmployeeById(Long id) {
         return entityManager.find(Employee.class, id);
     }
-
-    public EntityManager getEntityManager() {
-        return entityManager;
-    }
 }

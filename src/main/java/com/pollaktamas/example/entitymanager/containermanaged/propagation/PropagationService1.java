@@ -33,8 +33,4 @@ public class PropagationService1 {
         Employee employeeById = propagationService2.findEmployeeById(employee.getId());
         Assert.isTrue(employee == employeeById);
     }
-
-    public EntityManager getEntityManager() {
-        return entityManager;
-    }
 }
